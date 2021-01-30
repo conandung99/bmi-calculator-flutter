@@ -12,15 +12,66 @@ class _InputPageState extends State<InputPage> {
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
         ),
-        body: Container(
-          margin: EdgeInsets.all(15.0),
-          decoration: BoxDecoration(
-            color: Color(0xFF1D1F33), // must be the same below
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          // color: Color(0xFF1D1F33), // must be the same above
-          height: 200.0,
-          width: 170.0,
+        body: Column(
+          children: [
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1D1F33), // must be the same below
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1D1F33), // must be the same below
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(15.0),
+                decoration: BoxDecoration(
+                  color: Color(0xFF1D1F33), // must be the same below
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1D1F33), // must be the same below
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1D1F33), // must be the same below
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ));
   }
 }
