@@ -18,60 +18,40 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1D1F33), // must be the same below
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: buildContainer(),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1D1F33), // must be the same below
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: buildContainer(),
                   ),
                 ],
               ),
             ),
             Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  color: Color(0xFF1D1F33), // must be the same below
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              ),
+              child: buildContainer(),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1D1F33), // must be the same below
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: buildContainer(),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1D1F33), // must be the same below
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
+                    child: buildContainer(),
                   ),
                 ],
               ),
             ),
           ],
         ));
+  }
+
+  Container buildContainer() {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color(0xFF1D1F33), // must be the same below
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    );
   }
 }
