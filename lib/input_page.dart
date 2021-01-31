@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const bottomCardColor = Color(0xFFE94A54); //
+const bottomHeight = 70.0;
+const cardColor = Color(0xFF1D1F33); //
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -18,45 +22,50 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableWidget(0xFF1D1F33),
+                    child: ReusableWidget(cardColor),
                   ),
                   Expanded(
-                    child: ReusableWidget(0xFF1D1F33),
+                    child: ReusableWidget(cardColor),
                   ),
                 ],
               ),
             ),
             Expanded(
-              child: ReusableWidget(0xFF1D1F33),
+              child: ReusableWidget(cardColor),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableWidget(0xFF1D1F33),
+                    child: ReusableWidget(cardColor),
                   ),
                   Expanded(
-                    child: ReusableWidget(0xFF1D1F33),
+                    child: ReusableWidget(cardColor),
                   ),
                 ],
               ),
             ),
+            Container(
+              color: bottomCardColor,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: bottomHeight,
+            )
           ],
         ));
   }
 }
 
 class ReusableWidget extends StatelessWidget {
-  ReusableWidget(this.color);
-
-  final int color;
+  ReusableWidget(this.colour);
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: Color(color), // must be the same below
+        color: colour, // must be the same below
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
