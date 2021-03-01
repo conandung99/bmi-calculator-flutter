@@ -29,35 +29,31 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () => setState(() {
+                    child: ReusableContainer(
+                      colour: selected == Gender.male
+                          ? kActiveColor
+                          : kInactiveColor,
+                      childCard: IconContent(
+                        iconData: FontAwesomeIcons.mars,
+                        label: 'MALE',
+                      ),
+                      onPress: () => setState(() {
                         selected = Gender.male;
                       }),
-                      child: ReusableContainer(
-                        colour: selected == Gender.male
-                            ? kActiveColor
-                            : kInactiveColor,
-                        childCard: IconContent(
-                          iconData: FontAwesomeIcons.mars,
-                          label: 'MALE',
-                        ),
-                      ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () => setState(() {
+                    child: ReusableContainer(
+                      colour: selected == Gender.female
+                          ? kActiveColor
+                          : kInactiveColor,
+                      childCard: IconContent(
+                        iconData: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
+                      ),
+                      onPress: () => setState(() {
                         selected = Gender.female;
                       }),
-                      child: ReusableContainer(
-                        colour: selected == Gender.female
-                            ? kActiveColor
-                            : kInactiveColor,
-                        childCard: IconContent(
-                          iconData: FontAwesomeIcons.venus,
-                          label: 'FEMALE',
-                        ),
-                      ),
                     ),
                   ),
                 ],
