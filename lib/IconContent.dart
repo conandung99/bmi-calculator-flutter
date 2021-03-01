@@ -3,9 +3,9 @@ import 'constants.dart';
 
 class IconContent extends StatelessWidget {
   final IconData iconData;
-  final String text;
+  final String label;
 
-  IconContent({this.iconData, this.text});
+  IconContent({this.iconData, this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,13 @@ class IconContent extends StatelessWidget {
       children: [
         Icon(
           iconData,
-          size: 80.0,
+          size: 100.0,
         ),
         SizedBox(
           height: 15.0,
         ),
         Text(
-          text,
+          label,
           style: kLabelTextStyle,
         ),
       ],

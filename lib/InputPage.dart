@@ -22,6 +22,8 @@ class _InputPageState extends State<InputPage> {
           title: Text('BMI CALCULATOR'),
         ),
         body: Column(
+          // for full column each widget
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Row(
@@ -37,7 +39,7 @@ class _InputPageState extends State<InputPage> {
                             : kInactiveColor,
                         childCard: IconContent(
                           iconData: FontAwesomeIcons.mars,
-                          text: 'MALE',
+                          label: 'MALE',
                         ),
                       ),
                     ),
@@ -53,7 +55,7 @@ class _InputPageState extends State<InputPage> {
                             : kInactiveColor,
                         childCard: IconContent(
                           iconData: FontAwesomeIcons.venus,
-                          text: 'FEMALE',
+                          label: 'FEMALE',
                         ),
                       ),
                     ),
@@ -69,6 +71,12 @@ class _InputPageState extends State<InputPage> {
                     Text(
                       'HEIGHT',
                       style: kLabelTextStyle,
+                    ),
+                    Row(
+                      children: [
+                        Text('180', style: kNumberStyle),
+                        Text('cm', style: kLabelTextStyle),
+                      ],
                     )
                   ],
                 ),
