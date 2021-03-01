@@ -6,7 +6,10 @@ import 'ReusableContainer.dart';
 
 const bottomCardColor = Color(0xFFE94A54); //
 const bottomHeight = 70.0;
-const cardColor = Color(0xFF1D1F33); //
+const inactiveColor = Color(0xFF1D1F33); //
+const activeColor = Color(0xFF292B3B); //
+
+enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -14,6 +17,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selected = Gender.male;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +31,34 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableContainer(
-                      colour: cardColor,
-                      childCard: IconContent(
-                        iconData: FontAwesomeIcons.mars,
-                        text: 'MALE',
+                    child: GestureDetector(
+                      onTap: () => setState(() {
+                        selected = Gender.male;
+                      }),
+                      child: ReusableContainer(
+                        colour: selected == Gender.male
+                            ? activeColor
+                            : inactiveColor,
+                        childCard: IconContent(
+                          iconData: FontAwesomeIcons.mars,
+                          text: 'MALE',
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
-                    child: ReusableContainer(
-                      colour: cardColor,
-                      childCard: IconContent(
-                        iconData: FontAwesomeIcons.venus,
-                        text: 'FEMALE',
+                    child: GestureDetector(
+                      onTap: () => setState(() {
+                        selected = Gender.female;
+                      }),
+                      child: ReusableContainer(
+                        colour: selected == Gender.female
+                            ? activeColor
+                            : inactiveColor,
+                        childCard: IconContent(
+                          iconData: FontAwesomeIcons.venus,
+                          text: 'FEMALE',
+                        ),
                       ),
                     ),
                   ),
@@ -47,16 +66,16 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             Expanded(
-              child: ReusableContainer(colour: cardColor),
+              child: ReusableContainer(colour: inactiveColor),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableContainer(colour: cardColor),
+                    child: ReusableContainer(colour: inactiveColor),
                   ),
                   Expanded(
-                    child: ReusableContainer(colour: cardColor),
+                    child: ReusableContainer(colour: inactiveColor),
                   ),
                 ],
               ),
