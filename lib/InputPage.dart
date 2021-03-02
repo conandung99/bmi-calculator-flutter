@@ -87,7 +87,7 @@ class _InputPageState extends State<InputPage> {
                               RoundSliderOverlayShape(overlayRadius: 28.0),
                           thumbColor: Color(0xFFEB1555),
                           overlayColor: Color(0x29EB1555),
-                          activeTrackColor: Colors.white,
+                          activeTrackColor: Color(0xFFEB1555),
                           inactiveTrackColor: Color(0xFF8D8E98)),
                       child: Slider(
                           value: height.toDouble(),
@@ -95,7 +95,7 @@ class _InputPageState extends State<InputPage> {
                           max: kMaxHeight,
                           min: kMinHeight,
                           onChanged: (double newValue) {
-                            print(newValue);
+                            // print(newValue);
                             setState(() {
                               height = newValue.round();
                             });
@@ -109,7 +109,9 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableContainer(colour: kInactiveColor),
+                    child: ReusableContainer(
+                      colour: kInactiveColor,
+                    ),
                   ),
                   Expanded(
                     child: ReusableContainer(colour: kInactiveColor),
@@ -122,6 +124,15 @@ class _InputPageState extends State<InputPage> {
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
               height: kBottomHeight,
+              alignment: Alignment.center,
+              child: Text(
+                'CALCULATE',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  fontSize: 30.0,
+                ),
+              ),
             )
           ],
         ));
