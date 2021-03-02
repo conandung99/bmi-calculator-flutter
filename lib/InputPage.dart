@@ -127,14 +127,7 @@ class _InputPageState extends State<InputPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              FloatingActionButton(
-                                backgroundColor: kActiveColor,
-                                onPressed: null,
-                                child: Icon(
-                                  Icons.remove,
-                                  color: Colors.white,
-                                ),
-                              ),
+                              RoundCircleButton(),
                               SizedBox(
                                 width: 10.0,
                               ),
@@ -175,5 +168,21 @@ class _InputPageState extends State<InputPage> {
             )
           ],
         ));
+  }
+}
+
+class RoundCircleButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      // elevation: 6.0, // when click button
+      onPressed: () {},
+      shape: CircleBorder(),
+      fillColor: kActiveColor,
+      constraints: BoxConstraints.tightFor(
+        height: 56.0,
+        width: 56.0,
+      ),
+    );
   }
 }
