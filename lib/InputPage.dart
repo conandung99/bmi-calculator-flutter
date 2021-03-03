@@ -17,6 +17,7 @@ class _InputPageState extends State<InputPage> {
   Gender selected = Gender.male;
   int height = 180;
   int weight = 60;
+  int age = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -127,17 +128,24 @@ class _InputPageState extends State<InputPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              RoundCircleButton(),
+                              RoundCircleButton(
+                                child: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
+                              ),
                               SizedBox(
                                 width: 10.0,
                               ),
-                              FloatingActionButton(
-                                backgroundColor: kActiveColor,
-                                onPressed: null,
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.white,
-                                ),
+                              RoundCircleButton(
+                                child: FontAwesomeIcons.plus,
+                                onPressed: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -146,7 +154,46 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                   Expanded(
-                    child: ReusableContainer(colour: kInactiveColor),
+                    child: ReusableContainer(
+                      colour: kInactiveColor,
+                      childCard: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'AGE',
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            age.toString(),
+                            style: kNumberStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundCircleButton(
+                                child: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  setState(() {
+                                    age--;
+                                  });
+                                },
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              RoundCircleButton(
+                                child: FontAwesomeIcons.plus,
+                                onPressed: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -172,11 +219,16 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundCircleButton extends StatelessWidget {
+  RoundCircleButton({@required this.child, @required this.onPressed});
+  final IconData child;
+  final Function onPressed;
+
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      child: Icon(child),
       // elevation: 6.0, // when click button
-      onPressed: () {},
+      onPressed: onPressed,
       shape: CircleBorder(),
       fillColor: kActiveColor,
       constraints: BoxConstraints.tightFor(
