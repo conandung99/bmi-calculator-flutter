@@ -8,7 +8,7 @@ const kBottomHeight = 70.0;
 const kMinHeight = 100.0;
 const kMaxHeight = 280.0;
 
-const kLabelTextStyle = TextStyle(
+const kTextLabelStyle = TextStyle(
   fontSize: 20.0,
   color: Color(0xFF8D8E98),
 );
@@ -16,4 +16,22 @@ const kLabelTextStyle = TextStyle(
 const kNumberStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,
+);
+
+const kTextButtonStyle = TextStyle(
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+  fontSize: 30.0,
+);
+
+const kTextLargeStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+  fontSize: 50.0,
+);
+
+const kTextResultStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: Color(0xFF24D876),
+  fontSize: 22.0,
 );

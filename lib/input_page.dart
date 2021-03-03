@@ -1,11 +1,12 @@
+import 'package:bmi_calculator/bottom_gesture_button.dart';
 import 'package:bmi_calculator/result_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'icon_content.dart';
-import 'reusable_container.dart';
-import 'constants.dart';
+import 'package:bmi_calculator/icon_content.dart';
+import 'package:bmi_calculator/reusable_container.dart';
+import 'package:bmi_calculator/constants.dart';
 
 enum Gender { male, female }
 
@@ -72,7 +73,7 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Text(
                       'HEIGHT',
-                      style: kLabelTextStyle,
+                      style: kTextLabelStyle,
                     ),
                     SizedBox(height: 10.0),
                     Row(
@@ -80,7 +81,7 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(height.toString(), style: kNumberStyle),
-                        Text('cm', style: kLabelTextStyle),
+                        Text('cm', style: kTextLabelStyle),
                       ],
                     ),
                     SliderTheme(
@@ -120,7 +121,7 @@ class _InputPageState extends State<InputPage> {
                         children: [
                           Text(
                             'WEIGHT',
-                            style: kLabelTextStyle,
+                            style: kTextLabelStyle,
                           ),
                           Text(
                             weight.toString(),
@@ -162,7 +163,7 @@ class _InputPageState extends State<InputPage> {
                         children: [
                           Text(
                             'AGE',
-                            style: kLabelTextStyle,
+                            style: kTextLabelStyle,
                           ),
                           Text(
                             age.toString(),
@@ -199,26 +200,12 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
+            BottomGestureButton(
+              centerText: 'CACULATE',
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ResultScreen()));
               },
-              child: Container(
-                color: kBottomCardColor,
-                margin: EdgeInsets.only(top: 10.0),
-                width: double.infinity,
-                height: kBottomHeight,
-                alignment: Alignment.center,
-                child: Text(
-                  'CALCULATE',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                    fontSize: 30.0,
-                  ),
-                ),
-              ),
             )
           ],
         ));
