@@ -1,6 +1,6 @@
-import 'package:bmi_calculator/bottom_gesture_button.dart';
+import 'package:bmi_calculator/components/bottom_gesture_button.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/reusable_container.dart';
+import 'package:bmi_calculator/components/reusable_container.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -15,10 +15,15 @@ class ResultScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
+            child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text(
-            '\tYour Result',
-            style: kTextLargeStyle,
-          )),
+                'Your Result',
+                style: kTextLargeStyle,
+              ),
+            ),
+          ),
           Expanded(
             child: ReusableContainer(
               colour: kActiveColor,
@@ -31,14 +36,18 @@ class ResultScreen extends StatelessWidget {
                     style: kTextResultStyle,
                   ),
                   Text(
-                    '30',
-                    style: kNumberStyle,
+                    '18.2',
+                    style: kTextBMIStyle,
                   ),
-                  Text('You have good body shape!'),
+                  Text(
+                    'Your BMI score is quite low,\nYou should eat more!',
+                    textAlign: TextAlign.center,
+                    style: kBodyTextStyle,
+                  ),
                 ],
               ),
             ),
-            flex: 5,
+            flex: 8,
           ),
           Expanded(
             child: BottomGestureButton(

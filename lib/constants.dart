@@ -35,3 +35,12 @@ const kTextResultStyle = TextStyle(
   color: Color(0xFF24D876),
   fontSize: 22.0,
 );
+
+const kTextBMIStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 100.0,
+);
+
+const kBodyTextStyle = TextStyle(
+  fontSize: 22.0,
+);
