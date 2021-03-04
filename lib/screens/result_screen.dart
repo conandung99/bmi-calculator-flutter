@@ -4,6 +4,15 @@ import 'package:bmi_calculator/components/reusable_container.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
+  const ResultScreen(
+      {@required this.bmiTextValue,
+      @required this.bmiResult,
+      @required this.bmiInterpretation});
+
+  final String bmiTextValue;
+  final String bmiResult;
+  final String bmiInterpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,15 +41,15 @@ class ResultScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Normal',
+                    bmiResult,
                     style: kTextResultStyle,
                   ),
                   Text(
-                    '18.2',
+                    bmiTextValue,
                     style: kTextBMIStyle,
                   ),
                   Text(
-                    'Your BMI score is quite low,\nYou should eat more!',
+                    bmiInterpretation,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),

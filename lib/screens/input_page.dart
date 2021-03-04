@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/calculator_bmi.dart';
 import 'package:bmi_calculator/components/bottom_gesture_button.dart';
 import 'package:bmi_calculator/screens/result_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -203,8 +204,20 @@ class _InputPageState extends State<InputPage> {
             BottomGestureButton(
               centerText: 'CACULATE',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ResultScreen()));
+                CalculatorBMI calc = CalculatorBMI(
+                  height: height,
+                  weight: weight,
+                );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultScreen(
+                      bmiTextValue: calc.calculateBMI(),
+                      bmiResult: calc.getBMIResult(),
+                      bmiInterpretation: calc.getInterpretation(),
+                    ),
+                  ),
+                );
               },
             )
           ],
